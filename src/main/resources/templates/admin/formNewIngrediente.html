@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		New ingrediente
+	</title>
+	<link rel="stylesheet" href="/css/stile.css" />
+</head>
+
+<body>
+	
+
+	<div><a href="/"><img src="/images/logo-siw.png" alt="logo" width="50%"/></a></div>
+	<h1>Aggiungi un ingrediente</h1>
+	<form th:action="@{/ingrediente}" method="POST" th:object="${ingrediente}">
+		<div>
+			<span th:text="${messaggioErrore}">Errore</span>
+		</div>
+		
+		<div>
+			<label>Nome:</label> <span><input required type="text" th:field="${ingrediente.nome}" /></span>
+		</div>
+		
+		<div>
+			<span><button type="submit">Conferma</button></span>
+		</div>
+	</form>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+<h1 th:text="'Regista per il film ' + ${ricetta.nome}"></h1>
+	<div th:if="${cuochi.isEmpty()}">Non ci sono registi nel sistema</div>
+	<ul>
+		<li th:each="cuoco : ${cuochi}">
+			<a th:href="@{'/admin/setCuocoToRicetta/'+ ${cuoco.id}+'/'+${ricetta.id}}"
+				th:text="${cuoco.nome} + ' ' + ${cuoco.cognome}">Steven Spielberg</a>
+		</li>
+	</ul>
+
+</body>
+</html>
